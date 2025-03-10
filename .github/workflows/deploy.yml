@@ -14,7 +14,7 @@ jobs:
         uses: deploy2nekoweb/deploy2nekoweb@v4
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-          nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
+          # nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
           nekoweb-folder: 'site'
           directory: 'public'
 
