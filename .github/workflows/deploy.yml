@@ -1,20 +1,32 @@
-on: [push]
+on: 
+  push:
+    branches:
+      - main  # Only trigger on changes to the 'main' branch
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
-    name: deploy2nekoweb
+    name: Deploy to NekoWeb and Neocities
+
     steps:
-      - name: Checkout
+      # Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-        
-      # your build step here
-        
-      - name: deploy2nekoweb
+
+      # Deploy to NekoWeb
+      - name: Deploy to NekoWeb
         uses: deploy2nekoweb/deploy2nekoweb@v4
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-          # nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-          nekoweb-folder: 'site'
-          directory: 'public'
+          nekoweb-folder: 'site'  # Specify the folder to deploy
+          directory: '.'  # Deploy everything from the root directory (or adjust if necessary)
 
+      # Deploy to Neocities
+      - name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_TOKEN }}  # Use secret for Neocities API key
+          cleanup: false  # Set to true to remove orphaned files on Neocities
+          neocities_supporter: false  # Set to true if you have a supporter account
+          preview_before_deploy: true  # Optional: preview the deployment plan before applying
+          dist_dir: '.'  # Deploy everything from the root directory (or adjust if necessary)
