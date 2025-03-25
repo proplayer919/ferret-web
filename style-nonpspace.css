@@ -152,6 +152,3 @@ footer a:hover {
     text-decoration-color: rgb(233, 154, 226); /* Slightly change on hover */
 }
 
-p:not(.footerp), h2:not(.blogh2) {
-    margin-bottom: 20px; /* Adjust this value for more/less space */
-}
