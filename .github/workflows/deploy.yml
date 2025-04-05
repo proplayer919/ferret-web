@@ -10,16 +10,16 @@ jobs:
 
     steps:
       # Checkout the repository
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # Deploy to NekoWeb
-      - name: Deploy to NekoWeb
-        uses: deploy2nekoweb/deploy2nekoweb@v4
+      - name: deploy2nekoweb
+        uses: indiefellas/deploy2nekoweb@v4
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-          nekoweb-folder: 'site'  # Target the 'site' folder on NekoWeb (already exists there)
-          directory: '.'  # Deploy everything from the root directory (or adjust if needed)
+          nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
+          nekoweb-folder: 'site'
+          directory: 'public'
 
       # Deploy to Neocities
       - name: Deploy to Neocities
