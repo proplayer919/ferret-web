@@ -1,4 +1,4 @@
-on: 
+on:
   push:
     branches:
       - main  # Only trigger on changes to the 'main' branch
@@ -18,8 +18,8 @@ jobs:
         uses: deploy2nekoweb/deploy2nekoweb@v4
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-          nekoweb-folder: 'site'  # Specify the folder to deploy
-          directory: '.'  # Deploy everything from the root directory (or adjust if necessary)
+          nekoweb-folder: 'site'  # Target the 'site' folder on NekoWeb (already exists there)
+          directory: '.'  # Deploy everything from the root directory (or adjust if needed)
 
       # Deploy to Neocities
       - name: Deploy to Neocities
@@ -29,4 +29,4 @@ jobs:
           cleanup: true  # Set to true to remove orphaned files on Neocities
           neocities_supporter: false  # Set to true if you have a supporter account
           preview_before_deploy: true  # Optional: preview the deployment plan before applying
-          dist_dir: '.'  # Deploy everything from the root directory (or adjust if necessary)
+          dist_dir: '.'  # Deploy everything from the root directory
