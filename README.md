@@ -9,12 +9,19 @@ The amazing website of Ferretosan. (The artwork is better than the actual websit
 > [!NOTE]
 > Parts of this code are AI generated.
 
-<details>
-<summary>
+# Contribution
+
+**Before contributing to Ferret's corner, make sure to read these things:**
+
+* Please only add code that you would want personally on your website (no obscene things, etc)
+* Your code may just be like not used, sorry, I can't spend all day and all night accepting PRs
+* Because I suck, I might delete your code (this relates to what I said above)
+* Don't completely change the framework or something I want to keep it just PURE HTML/CSS/JS
+
+## AWESOME Contributors
+* [Ferretosan](https://github.com/ferretosan)
 
 # Patch Notes
-
-</summary>
 
 ## How patch notes work
 
@@ -43,22 +50,3 @@ The amazing website of Ferretosan. (The artwork is better than the actual websit
 * Added image cards (taken from VoxelCube1/voxelcube1.gihthub.io)
 
 > Yea, theres no more patch notes, sry.
-
-</details>
-
-<details>
-<summary>
-
-# Contribution
-
-</summary>
-
-**Before contributing to Ferret's corner, make sure to read these things:**
-
-* Please only add code that you would want personally on your website (no obscene things, etc)
-* Your code may just be like not used, sorry, I can't spend all day and all night accepting PRs
-* Because I suck, I might delete your code (this relates to what I said above)
-* Don't completely change the framework or something I want to keep it just PURE HTML/CSS/JS
-
-## AWESOME Contributors
-* [Ferretosan](https://github.com/ferretosan)
