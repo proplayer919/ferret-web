@@ -1,5 +1,19 @@
+/*─────────────────────────────
+ ___________________________
+< this code is ai generated >
+ ---------------------------
+        \   ^__^
+         \  (OO)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+─────────────────────────────*/
+
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bytesized&display=swap');
 
+/*─────────────────────────────
+  ✦ BASE RESET & GLOBAL STYLES ✦
+─────────────────────────────*/
 * {
     margin: 0;
     padding: 0;
@@ -8,12 +22,9 @@
     transition: all 0.3s ease;
 }
 
+/* Body styling with background image and centered content */
 body {
-    background-image: url("bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background: url("bg.png") center center / cover no-repeat fixed;
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
@@ -23,6 +34,9 @@ body {
     text-align: center;
 }
 
+/*────────────────────────
+  ✦ HEADER & NAVIGATION ✦
+────────────────────────*/
 header {
     width: 100%;
     background: rgba(31, 31, 31, 0.6);
@@ -31,50 +45,68 @@ header {
     color: #f7c8f4;
     padding: 20px 0;
     text-align: center;
-    top: 0;
-    left: 0;
     z-index: 1000;
     transition: background 0.4s ease;
+    position: relative;
 }
 
+/* Logo link reset */
 .logo a {
     text-decoration: none;
 }
 
+/* Logo header with Bytesized font and text shadow */
 .logo h1 {
-    text-shadow:3px 3px 100px #000, 3px 3px 100px #000;
-    background-color: transparent;
-    font-size: 2.5rem;
     font-family: Bytesized;
+    font-size: 2.5rem;
+    background-color: transparent;
+    text-shadow: 3px 3px 100px #000;
     transform: translateY(0);
     transition: transform 0.4s ease;
 }
 
+/* Logo hover animation */
 .logo h1:hover {
     transform: translateY(-3px);
 }
 
+/* Navigation list styling */
 header nav ul {
     list-style: none;
     margin-top: 10px;
 }
 
+/* Inline nav links */
 header nav ul li {
     display: inline;
     margin: 0 15px;
 }
 
-header nav ul li a {
+/*──────────────────────────────
+  ✦ LINK STYLES (NAV, POST, LIST) ✦
+──────────────────────────────*/
+/* Shared link styles */
+header nav ul li a,
+.post a,
+ul li a {
     color: #f7c8f4;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
+/* Hover effect for links */
+header nav ul li a:hover,
+.post a:hover,
+ul li a:hover {
     color: #ffb3e6;
+    text-decoration: underline;
 }
 
+/*──────────────────────
+  ✦ MAIN CONTENT WRAPPER ✦
+──────────────────────*/
+/* Main container with blurred background and fade-in animation */
 main {
     width: 80%;
     max-width: 920px;
@@ -91,17 +123,72 @@ main {
     animation: fadeIn 0.8s ease forwards;
 }
 
+/* Main fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/*─────────────────────
+  ✦ HEADINGS & TEXT ✦
+─────────────────────*/
+/* Headings color and center alignment */
 h2, h3 {
     color: #f7c8f4;
-    transition: color 0.3s ease;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
+/* Gradient text style for headings and links */
+h1, h2, h3, a,
+footer a {
+    background: linear-gradient(90deg, rgb(211, 167, 243) 0%, rgb(233, 154, 226) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Add spacing below paragraphs/headings */
+p:not(.footerp),
+h2:not(.blogh2) {
+    margin-bottom: 20px;
+}
+
+/* Tweak for top paragraph margin inside main */
+main > p:first-child {
+    margin-bottom: -15px;
+}
+
+/*────────────────────
+  ✦ FOOTER STYLES ✦
+────────────────────*/
+/* Footer with gradient text links */
+footer {
+    width: 100%;
+    color: #f7c8f4;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    transition: background 0.4s ease;
+}
+
+/* Footer links with underline effect */
+footer a {
+    text-decoration: underline;
+    text-decoration-color: rgb(211, 167, 243);
+    font-weight: bold;
+    transition: text-decoration-color 0.3s ease;
+}
+
+/* Footer link hover effect */
+footer a:hover {
+    text-decoration-color: rgb(233, 154, 226);
+}
+
+/*─────────────────────
+  ✦ BLOG POST STYLING ✦
+─────────────────────*/
+/* Blog post container with hover animation */
 .post {
     background: rgba(31, 31, 31, 0.6);
     backdrop-filter: blur(10px);
@@ -114,140 +201,86 @@ h2, h3 {
     text-align: center;
 }
 
+/* Post hover lift and shadow */
 .post:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.post a {
-    color: #ffb3e6;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.post a:hover {
-    text-decoration: underline;
-    color: #f7c8f4;
-}
-
+/*───────────────────────
+  ✦ UL LISTS & LINKS ✦
+───────────────────────*/
+/* Remove bullets from list */
 ul {
     list-style: none;
     margin-top: 20px;
 }
 
+/* List item spacing */
 ul li {
     margin-bottom: 10px;
 }
 
-ul li a {
-    color: #ffb3e6;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-ul li a:hover {
-    text-decoration: underline;
-    color: #f7c8f4;
-}
-
-footer {
-    width: 100%;
-    background: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    color: #f7c8f4;
-    text-align: center;
-    padding: 10px;
-    margin-top: 30px;
-    transition: background 0.4s ease;
-}
-
-
-h1, h2, h3, a {
-    background: linear-gradient(90deg, rgb(211, 167, 243) 0%, rgb(233, 154, 226) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-footer a {
-    background: linear-gradient(90deg, rgb(211, 167, 243) 0%, rgb(233, 154, 226) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: underline;
-    text-decoration-color: rgb(211, 167, 243);
-    font-weight: bold;
-    transition: text-decoration-color 0.3s ease;
-}
-
-footer a:hover {
-    text-decoration-color: rgb(233, 154, 226);
-}
-
-p:not(.footerp), h2:not(.blogh2) {
-    margin-bottom: 20px;
-}
-
+/*───────────────────────
+  ✦ IMAGE CARDS (BIG) ✦
+───────────────────────*/
+/* Container for big image cards */
 .imagecard-container {
     display: flex;
-    flex-wrap: wrap; /* Allow images to wrap */
+    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Center images when wrapped */
-  }
-  
-  .imagecard {
-    width: 150px; /* Image size */
+    justify-content: center;
+}
+
+/* Big image card styling */
+.imagecard {
+    width: 150px;
     height: 150px;
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     transition: transform 0.3s ease;
-    margin-bottom: 20px; /* Add margin to space out images when wrapped */
-  }
-  
-  .imagecard:hover {
-    transform: scale(1.2); /* Image grows on hover */
-  }
-  
-  .imagecard:active {
-    transform: scale(1); /* Image shrinks back when clicked */
-  }
-  /**/
-  .simagecard-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow images to wrap */
-    gap: 20px;
-    justify-content: center; /* Center images when wrapped */
-  }
+    margin-bottom: 20px;
+}
 
-  .simagecard-container {
+/* Big image card hover state */
+.imagecard:hover {
+    transform: scale(1.2);
+}
+
+/* Big image card active (click) state */
+.imagecard:active {
+    transform: scale(1);
+}
+
+/*─────────────────────────────
+  ✦ IMAGE CARDS (SMALL) ✦
+─────────────────────────────*/
+/* Container for small image cards */
+.simagecard-container {
     display: flex;
-    flex-wrap: wrap; /* Allow images to wrap */
+    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Center images when wrapped */
-  }
-  
-  
-  .simagecard {
-    width: 50px; /* Image size */
+    justify-content: center;
+}
+
+/* Small image card styling */
+.simagecard {
+    width: 50px;
     height: 50px;
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     transition: transform 0.3s ease;
-    margin-bottom: 20px; /* Add margin to space out images when wrapped */
-  }
-  
-  .simagecard:hover {
-    transform: scale(1.2); /* Image grows on hover */
-  }
-  
-  .simagecard:active {
-    transform: scale(1); /* Image shrinks back when clicked */
-  }
+    margin-bottom: 20px;
+}
 
-  main > p:first-child {
-    margin-bottom: -15px;
+/* Small image card hover state */
+.simagecard:hover {
+    transform: scale(1.2);
+}
+
+/* Small image card active (click) state */
+.simagecard:active {
+    transform: scale(1);
 }
