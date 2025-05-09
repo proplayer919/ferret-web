@@ -29,6 +29,14 @@ The amazing website of Ferretosan. (The artwork is better than the actual websit
 * The second number (y.x.y) is the minor release. This is where I make a change that is noticable, but not changing the whole thing. This could be like a background change or even just working on the website with different goals, etc. I'm not bothering to put the latest minor release in here as it is quite fickle.
 * The third number (y.y.x) is the patch release. This number goes up every time I make a new version of the website. Like a minor `style.css` change or adding some stuffs, idk I forgot what I was going to write here!
 
+# 8.0.0
+
+* Wow, another redesign...
+
+## 7.1.5 - Making the patch notes look more beefier!
+
+* Basically just removed the collapsible feature
+
 ## 7.1.4 - Patch notes...
 
 * *FINALLY* added patch notes

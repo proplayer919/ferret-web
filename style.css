@@ -1,286 +1,83 @@
-/*─────────────────────────────
- ___________________________
-< this code is ai generated >
- ---------------------------
-        \   ^__^
-         \  (OO)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-─────────────────────────────*/
-
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bytesized&display=swap');
-
-/*─────────────────────────────
-  ✦ BASE RESET & GLOBAL STYLES ✦
-─────────────────────────────*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Archivo', sans-serif;
-    transition: all 0.3s ease;
+@font-face {
+  font-family: Basiic;
+  src: url(basiic.ttf);
 }
 
-/* Body styling with background image and centered content */
 body {
-    background: url("bg.png") center center / cover no-repeat fixed;
-    color: #e0e0e0;
+    margin: 0;
+    font-family: Basiic;
+    background: url('bg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(239, 225, 233);
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    padding: 1rem;
+  }
+  
+  .sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-}
+    gap: 1rem;
+    margin-right: 1rem;
+  }
+  
+button {
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    background: #412b3e;
+    border: none;
+    cursor: pointer;
+    color: rgb(239, 225, 233);
+    font-family: Basiic;
+  }
 
-/*────────────────────────
-  ✦ HEADER & NAVIGATION ✦
-────────────────────────*/
-header {
-    width: 100%;
-    background: rgba(31, 31, 31, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #f7c8f4;
-    padding: 20px 0;
-    text-align: center;
-    z-index: 1000;
-    transition: background 0.4s ease;
+button a {
+    text-decoration: none;
+  }
+  
+  .main-content {
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  .banner {
+    background: #412b3e;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+  }
+  
+  .banner h1 {
+    margin: 0;
+    
+  }
+  
+  .content-box {
+    background: #412b3e;
+    flex: 1;
+    flex-direction: column;
+    padding: 2rem;
     position: relative;
-}
-
-/* Logo link reset */
-.logo a {
-    text-decoration: none;
-}
-
-/* Logo header with Bytesized font and text shadow */
-.logo h1 {
-    font-family: Bytesized;
-    font-size: 2.5rem;
-    background-color: transparent;
-    text-shadow: 3px 3px 100px #000;
-    transform: translateY(0);
-    transition: transform 0.4s ease;
-}
-
-/* Logo hover animation */
-.logo h1:hover {
-    transform: translateY(-3px);
-}
-
-/* Navigation list styling */
-header nav ul {
-    list-style: none;
-    margin-top: 10px;
-}
-
-/* Inline nav links */
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-/*──────────────────────────────
-  ✦ LINK STYLES (NAV, POST, LIST) ✦
-──────────────────────────────*/
-/* Shared link styles */
-header nav ul li a,
-.post a,
-ul li a {
-    color: #f7c8f4;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-/* Hover effect for links */
-header nav ul li a:hover,
-.post a:hover,
-ul li a:hover {
-    color: #ffb3e6;
-    text-decoration: underline;
-}
-
-/*──────────────────────
-  ✦ MAIN CONTENT WRAPPER ✦
-──────────────────────*/
-/* Main container with blurred background and fade-in animation */
-main {
-    width: 80%;
-    max-width: 920px;
-    padding: 30px;
-    background: rgba(31, 31, 31, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 15px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
-}
-
-/* Main fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/*─────────────────────
-  ✦ HEADINGS & TEXT ✦
-─────────────────────*/
-/* Headings color and center alignment */
-h2, h3 {
-    color: #f7c8f4;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-/* Gradient text style for headings and links */
-h1, h2, h3, a,
-footer a {
-    background: linear-gradient(90deg, rgb(211, 167, 243) 0%, rgb(233, 154, 226) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Add spacing below paragraphs/headings */
-p:not(.footerp),
-h2:not(.blogh2) {
-    margin-bottom: 20px;
-}
-
-/* Tweak for top paragraph margin inside main */
-main > p:first-child {
-    margin-bottom: -15px;
-}
-
-/*────────────────────
-  ✦ FOOTER STYLES ✦
-────────────────────*/
-/* Footer with gradient text links */
-footer {
-    width: 100%;
-    color: #f7c8f4;
-    text-align: center;
-    padding: 10px;
-    margin-top: 30px;
-    transition: background 0.4s ease;
-}
-
-/* Footer links with underline effect */
-footer a {
-    text-decoration: underline;
-    text-decoration-color: rgb(211, 167, 243);
-    font-weight: bold;
-    transition: text-decoration-color 0.3s ease;
-}
-
-/* Footer link hover effect */
-footer a:hover {
-    text-decoration-color: rgb(233, 154, 226);
-}
-
-/*─────────────────────
-  ✦ BLOG POST STYLING ✦
-─────────────────────*/
-/* Blog post container with hover animation */
-.post {
-    background: rgba(31, 31, 31, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-/* Post hover lift and shadow */
-.post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/*───────────────────────
-  ✦ UL LISTS & LINKS ✦
-───────────────────────*/
-/* Remove bullets from list */
-ul {
-    list-style: none;
-    margin-top: 20px;
-}
-
-/* List item spacing */
-ul li {
-    margin-bottom: 10px;
-}
-
-/*───────────────────────
-  ✦ IMAGE CARDS (BIG) ✦
-───────────────────────*/
-/* Container for big image cards */
-.imagecard-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Big image card styling */
-.imagecard {
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease;
-    margin-bottom: 20px;
-}
-
-/* Big image card hover state */
-.imagecard:hover {
-    transform: scale(1.2);
-}
-
-/* Big image card active (click) state */
-.imagecard:active {
-    transform: scale(1);
-}
-
-/*─────────────────────────────
-  ✦ IMAGE CARDS (SMALL) ✦
-─────────────────────────────*/
-/* Container for small image cards */
-.simagecard-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Small image card styling */
-.simagecard {
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease;
-    margin-bottom: 20px;
-}
-
-/* Small image card hover state */
-.simagecard:hover {
-    transform: scale(1.2);
-}
-
-/* Small image card active (click) state */
-.simagecard:active {
-    transform: scale(1);
-}
+  }
+  
+  .main-text {
+    font-size: 1.5rem;
+  }
+  
+  .footer-text {
+    position: absolute;
+    bottom: 1rem;
+    font-style: italic;
+  }
+  .rightbar {
+    margin-left: 1rem;
+  }
+  a{
+    color: white;
+  }
