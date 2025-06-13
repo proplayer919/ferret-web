@@ -43,6 +43,11 @@ Before contributing to Ferret's corner, make sure to read these things:
 <details>
 <summary><h2>Release 8.0.x</h2></summary>
 
+### 8.0.2 - Layout
+
+* Changed the layout a little
+* Added "god fucking dammit kris where the fuck are we" webring
+
 ### 8.0.1 - Mobile
 
 * Responsive design ig
