@@ -1,84 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ferret's Corner</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Scroll animation observer
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation classes
+      const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <button><i><a href="/index.html">About Me</a></i></button>
-      <button><a href="/blog.html">Blog</a></button>
-      <button><a href="/music.html">Music</a></button>
-      <button><a href="https://voxelcube1.github.io/person/ferretosan">VoxelCube</a></button>
-      <button><a href="https://www.youtube.com/@ferretosan">YouTube</a></button>
-      <button><a href="https://bsky.app/profile/ferret.nekoweb.org">Bluesky</a></button>
-      <button><a href="https://duckduckgo.com/?q=%40ferretosan&ia=web">Discord</a></button>
-      <button><a href="https://namemc.com/profile/Ferretosan.1">nameMC</a></button>
-      <button><a href="https://github.com/Ferretosan">GitHub</a></button>
-      <button><a href="https://tamanotchi.world/23723">tamanotchi</a></button>
-    </div>
-
-    <div class="main-content">
-      <div class="banner">
-        <h1>Ferret's Corner / About Me</h1>
-      </div>
-      <div class="content-box">
-      <p>right now, i'm <a href="https://www.imood.com/users/ferret"><img src="https://moods.imood.com/display/uname-ferret/fg-ffffff/trans-1/imood.gif" alt="The current mood of ferret at www.imood.com" border="0"></a></p>
-        <h1>Welcome!!!</h1>
-        <p>This site was tested on a 1080p screen and a ... whatever my 13" Macbook Air screen is on Firefox. I'm sorry if it's not up to your standards. I've only been doing this for <i>3 years</i> now. (yes I started making websites in 2022)</p>
-        <p>Why, hello there! I'm Ferretosan, better known as Ferret. This is <i>Ferret's Corner</i> - the site i've been perfecting for years. And now it looks like this! This site has gone through a lot of phases, and I'm pretty proud of it the way it looks now.</p>
-        <p>I originally made this site to test this new free hosting platform I found called <i>Neocities</i>, but it quickly evolved into a full blown website. tbh, the previous version of this site (seven) was when I was in my <i>vibe-coding</i> era, so I apologize. I now use this site to display my music, write the occasional blog post, and ... bro idk.</p>
-        <h1>Suggestions</h1>
-        <p>I <i>highly</i> recommend Demon Slayer and Solo Levelling in the anime department, cuz they're just so good! Chainsaw Man, My Hero Academia and whatever else I've watched are also pretty good. <i>EXCEPT</i> for Jojo's Bizarre Adventure, worst anime I've ever watched imo.</p>
-        <p>As for the game section, I play a <i>lot</i> of Minecraft, like a <i>lot lot</i>. So, ofc I recommend Min<i>ce</i>raft (hehe i did the thing) There's also like Genshin which is decent and like Hollow Knight is decent although I think I soft-locked myself (someone pls help me)</p>
-        <p>I mainly listen to just whatever breakcore I can find, or my ambient video game music playlist, <i>songs to game to</i>. My favourite artist my far has to be <i>usedcvnt</i> tho. Like, her music is just so fire. And, she's like a massive insporation for my own music, so there's that as well.</p>
-        <p>Oh and I forgot ... DELTARUNEEEE</p>
-      </div>
-    </div>
-    <div class="rightbar">
-      <div class="rightbar-content">
-        <div id="ckwr">
-          <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
-          <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
-          <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/widget.css">
-        </div>
-        <div id='gfdkris'>
-          <script type="text/javascript"
-            src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"></script>
-          <script type="text/javascript"
-            src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"></script>
-        </div>
-
-        <iframe width="180" height="180" style="border:none" src="https://evehibi.nekoweb.org/ringlink/"
-          name="ringlink"></iframe>
-        <br>
-        <iframe width="180" height="180" style="border:none" src="https://dimden.neocities.org/navlink/"
-          name="neolink"></iframe>
-        <br>
-        <img src="/88x31/any_browser_at.gif"><img src="/88x31/anythingbut.gif">
-        <br>
-        <img src="/88x31/apple.gif"><img src="/88x31/discord.gif">
-        <br>
-        <img src="/88x31/madewithneo.gif"><img src="/88x31/fftake.gif">
-        <br>
-        <img src="/88x31/get_a_computer.jpg"><img src="/88x31/home-assistant.gif">
-        <br>
-        <img src="/88x31/html5.png"><img src="/88x31/i_like_computer.png">
-        <br>
-        <img src="/88x31/ia.gif"><img src="/88x31/imac.gif">
-        <br>
-        <img src="/88x31/the-largest-88x31-collection-2.png"> <a href="http://openbooks.neocities.org"><img
-            src="https://openbooks.neocities.org/img/88x31.gif" height="31" width="88"
-            style="image-rendering:pixelated;" /></a>
-      </div>
-      <div class="rightbar-mobile-warning">
-        <p>uhhhhhh yea no</p>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+<h1>Ferret's Corner</h1>
+<p class="intro"><i>Legends say the interwebs are still recovering...</i></p>
+<div class="buttons-88x31 fade-in">
+  <img src="88x31/html5.png" alt="HTML5">
+  <img src="88x31/any_browser_at.gif" alt="Any Browser">
+  <img src="88x31/anythingbut.gif" alt="Anything But Internet Explorer">
+  <img src="88x31/get_a_computer.jpg" alt="Get A Computer">
+  <img src="88x31/i_like_computer.png" alt="I Like Computer">
+  <img src="88x31/madewithneo.gif" alt="Made with Neocities">
+  <img src="88x31/discord.gif" alt="Discord">
+  <img src="88x31/apple.gif" alt="Apple">
+  <img src="88x31/imac.gif" alt="iMac">
+  <img src="88x31/home-assistant.gif" alt="Home Assistant">
+  <img src="88x31/ia.gif" alt="Internet Archive">
+  <img src="88x31/fftake.gif" alt="Firefox">
+</div>
+<div class="nav fade-in fade-in-delay-1">
+  <a href="#about">About</a> | 
+  <a href="#blog">Blog</a> | 
+  <a href="#music">Music</a> | 
+  <a href="#photos">Photos</a> | 
+  <a href="#projects">Projects</a>
+</div>
+<div class="social fade-in fade-in-delay-2">
+  <a href="https://bsky.app/profile/ferret.nekoweb.org">Bluesky</a> | 
+  <a href="https://youtube.com/@Ferretosan">YouTube</a> | 
+  <a href="https://discord.com/channels/@ferretosan">Discord</a> | 
+  <a href="https://github.com/ferretosan">GitHub</a> | 
+  <a href="https://namemc.com">nameMC</a>
+</div>
+<h2 id="about" class="slide-in-left">About me!</h2>
+<div class="fade-in">
+<p>Hi! I'm Ferretosan (aka Ferret). Welcome to my corner of the .. 1NT3RWEBZ!!</p>
+<p>This site is pretty basic, ikik - it's not meant to be some CSS showcase.</p>
+<p>I'm that one kid in class that everyone goes to for tech support, and is consequently accused of being a "hacker" after using Hacker Typer...</p>
+<p>I'm also a Minecraft player, and I am the Lead Manager on the brand-new Hollowcraft kitpvp server.</p>
+<p>I'm a breakcore enthusiast, and make some of it myself! (That's in the music section...)</p>
+</div>
+<div class="fade-in fade-in-delay-1">
+<div id="ckwr">
+  <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
+  <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
+  <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/widget.css">
+</div>
+<div id='gfdkris'>
+  <script type="text/javascript" src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"></script>
+  <script type="text/javascript" src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"></script>
+</div>
+</div>
+<h2 id="blog" class="slide-in-right">Blog</h2>
+<div class="fade-in">
+<p>I just switched to Bear for blog posts, and it's so, so much easier! Anyways, here's the links:</p>
+</div>
+<ul class="fade-in fade-in-delay-1">
+  <a href="https://ferretosan.bearblog.dev/minecraft-java-vs-bedrock/"><li>16/10/2024: Java or Bedrock</li></a>
+  <a href="https://ferretosan.bearblog.dev/chromebooks/"><li>14/6/2025: Chromebooks</li></a>
+</ul>
+<h2 id="music" class="slide-in-left">Music</h2>
+<div class="fade-in">
+<p>Yes, I make music. Is it a shocking fact? Idk, but I basically make electronica/breakcore music stuff. For now, the links will just take you to their respective pages on <a href="https://ferretosan.bandcamp.com">Bandcamp</a>.</p>
+</div>
+<div class="album-grid scale-in">
+  <img src="albums/criminalthoughts-cover.jpg" alt="Criminal Thoughts">
+  <img src="albums/actual-cover.jpg" alt="Actual (In Progress)">
+  <img src="albums/blip-cover.jpg" alt="Blip">
+  <img src="albums/again-cover.jpg" alt="Again">
+  <img src="albums/economix-cover.png" alt="Economix">
+</div>
+<h2 id="photos" class="slide-in-right">Photos</h2>
+<div class="fade-in">
+<p>Here are some lovely photos I've taken, mostly landscapes, and nature closeups.</p>
+</div>
+<div class="photo-grid scale-in">
+  <img src="https://images.unsplash.com/photo-1754117327970-0f5f18ee60db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 1">
+  <img src="https://images.unsplash.com/photo-1754117327868-78b91d769feb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 1">
+  <img src="https://images.unsplash.com/photo-1754117327872-8807da2cd2e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 2">
+  <img src="https://images.unsplash.com/photo-1754117327837-8df229306c45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 2">
+  <img src="https://images.unsplash.com/photo-1752471975264-fbf893ed34bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NXx8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 3">
+  <img src="https://images.unsplash.com/photo-1752471983011-34cbee92f4f2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 3">
+  <img src="https://images.unsplash.com/photo-1752471970410-5a50e4271c0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Nnx8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 4">
+  <img src="https://images.unsplash.com/photo-1752471962833-919e4d8e7096?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OHx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 4">
+  <img src="https://images.unsplash.com/photo-1728593592362-95e2a8d05af8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="Landscape Photo 5">
+  <img src="https://images.unsplash.com/photo-1749343812120-1e49adb8ad29?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 5">
+  <img src="https://images.unsplash.com/photo-1728345340972-47a0cf9651b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTJ8fHxlbnwwfHx8fHw%3D" alt="Landscape Photo 6">
+  <img src="https://images.unsplash.com/photo-1728442958655-001424ea9391?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTF8fHxlbnwwfHx8fHw%3D" alt="Nature Photo 6">
+</div>
+<h2 id="projects" class="slide-in-left">Projects</h2>
+<div class="fade-in">
+<p>This is basically all my good GitHub repos, so yea...</p>
+</div>
+<ul class="fade-in fade-in-delay-1">
+  <a href="https://github.com/ferretosan/flipper-badkb"><li>flipper-badkb</li></a>
+  <a href="https://github.com/ferretosan/purpley"><li>purpley for vscode</li></a>
+  <a href="https://github.com/ferretosan/web"><li>ferretosan/web</li></a>
+</ul>
