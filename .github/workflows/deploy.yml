@@ -6,20 +6,12 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy to NekoWeb and Neocities
+    name: Deploy to Neocities
 
     steps:
       # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: deploy2nekoweb
-        uses: indiefellas/deploy2nekoweb@v4
-        with:
-          nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-          nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-          nekoweb-folder: 'site'
-          directory: '.'
 
       # Deploy to Neocities
       - name: Deploy to Neocities
