@@ -67,6 +67,19 @@
 <p>I'm a breakcore enthusiast, and make some of it myself! (That's in the music section...)</p>
 </div>
 <div class="fade-in fade-in-delay-1">
+<script>
+  // Override location for webring scripts
+  Object.defineProperty(window, 'location', {
+    value: {
+      ...window.location,
+      hostname: 'ferretosan.neocities.org',
+      href: 'https://ferretosan.neocities.org' + window.location.pathname,
+      origin: 'https://ferretosan.neocities.org',
+      host: 'ferretosan.neocities.org'
+    },
+    writable: false
+  });
+</script>
 <div id="ckwr">
   <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
   <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>

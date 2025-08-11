@@ -32,7 +32,7 @@ h2 {
   border-radius: 0px;
   background: #2d1b40;
   padding-left: 10px;
-  font-family: Basiic;
+  font-family: 'Basicc', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
   text-shadow: 1px 1px 0px #4c1d95;
 }
 
@@ -65,7 +65,7 @@ a:hover {
   display: inline-block;
   border-radius: 0px;
   background: #1e1b3d;
-  font-family: Basiic;
+  font-family: 'Basicc', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
   font-weight: bold;
 }
 
@@ -231,6 +231,17 @@ ul a:hover li {
 p {
   font-family: Basiic;
   text-shadow: 1px 1px 0px #1e1b3d;
+}
+
+/* Webring alignment */
+#ckwr, #gfdkris {
+  text-align: left !important;
+}
+
+#ckwr *, #gfdkris * {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
 /* Scroll animations */
