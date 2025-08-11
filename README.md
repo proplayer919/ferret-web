@@ -43,6 +43,10 @@ Before contributing to Ferret's corner, make sure to read these things:
 <details>
 <summary><h2>Release 9.0.x</h2></summary>
 
+### 9.1.0 - Banner Image
+
+* literrally just added a banner image and some simple css changes
+
 ### 9.0.0 - Complete Retro Redesign & Modern Features
 
 * **🎨 Major Visual Overhaul**
