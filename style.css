@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Basiic';
-    src: url(basiic.ttf) format('truetype');
+    src: url(basiic.ttf);
 }
 
 body {
