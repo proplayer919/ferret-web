@@ -32,7 +32,7 @@ h2 {
   border-radius: 0px;
   background: #2d1b40;
   padding-left: 10px;
-  font-family: 'Basicc', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-family: 'Basiic', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
   text-shadow: 1px 1px 0px #4c1d95;
 }
 
@@ -65,7 +65,7 @@ a:hover {
   display: inline-block;
   border-radius: 0px;
   background: #1e1b3d;
-  font-family: 'Basicc', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-family: 'Basiic', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
   font-weight: bold;
 }
 
@@ -200,6 +200,18 @@ ul a:hover li {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.buttons-88x31 a {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 0;
+}
+
+.buttons-88x31 a img {
+  vertical-align: top;
 }
 
 .buttons-88x31 img:hover {
