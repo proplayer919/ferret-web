@@ -7,8 +7,6 @@ The amazing website of Ferretosan. (The artwork is better than the actual websit
 
 Feel free to contribute to this project and fix the 7 billion bugs. 🐛 Make sure to read the contribution guidelines before contributing ofc.
 
-All of he code here is free to use, no credits or anything - I stole your code so steal it back.
-
 Parts of this code are AI generated.
 
 </details>
