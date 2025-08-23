@@ -135,10 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('image-modal');
   const modalImg = document.getElementById('modal-img');
   const closeBtn = document.getElementById('close-modal');
-  // Listen for clicks on all images except those inside .buttons-88x31
+  // Listen for clicks on all images except those inside .buttons-88x31 and webrings
   document.body.addEventListener('click', function(e) {
     const target = e.target;
-    if (target.tagName === 'IMG' && !target.closest('.buttons-88x31')) {
+    if (target.tagName === 'IMG' && !target.closest('.buttons-88x31') && !target.closest('#ckwr') && !target.closest('#gfdkris')) {
       modalImg.src = target.src;
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
