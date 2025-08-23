@@ -220,23 +220,41 @@ ul a:hover li {
   box-shadow: 2px 2px 0px #1e1b3d;
 }
 
-/* Retro pixelated scrollbar */
+/* Retro pixelated scrollbar - now invisible */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 0px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e1b3d;
-  border: 2px solid #4c1d95;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6d28d9;
-  border: 1px solid #c084fc;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: transparent;
+}
+
+/* Hide scrollbars for Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbars for all elements */
+body, html {
+  overflow-x: hidden;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Add some retro text effects */

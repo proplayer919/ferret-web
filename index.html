@@ -6,6 +6,10 @@
   <title>Ferret's Corner</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="image-modal.css">
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js"></script>
+  <script src="markdown-parser.js"></script>
   <script>
     // Scroll animation observer
     document.addEventListener('DOMContentLoaded', function() {
@@ -18,6 +22,9 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+          } else {
+            // Remove visible class when element goes out of view (replayable animations)
+            entry.target.classList.remove('visible');
           }
         });
       }, observerOptions);
@@ -25,12 +32,44 @@
       // Observe all elements with animation classes
       const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
       animatedElements.forEach(el => observer.observe(el));
+      
+      // Back to Top Button functionality
+      const backToTopButton = document.getElementById('back-to-top');
+      
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+      
+      // Smooth scroll to top when clicked
+      backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
     });
   </script>
 </head>
 <body>
+<div id="popup-overlay">
+  <span id="popup-close">&times;</span>
+  <div id="popup-window">
+    <div id="popup-content"></div>
+    <button id="popup-back-to-top" title="Back to Top">↑</button>
+  </div>
+</div>
 <img src="banner.png" width="100%">
 <p class="intro"><i>Legends say the interwebs are still recovering...</i></p>
+<!-- Image Popup Modal -->
+<div id="image-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;">
+  <span id="close-modal" style="position:absolute;top:30px;right:40px;font-size:2.5rem;color:#f472b6;cursor:pointer;font-family:sans-serif;text-shadow:2px 2px 0px #7c2d92;background:#2d1b40;border:2px solid #6d28d9;border-radius:0;padding:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:4px 4px 0px #1e1b3d;transition:color 0.2s, background 0.2s">&times;</span>
+  <img id="modal-img" src="" alt="Full Image" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
+</div>
 <div class="buttons-88x31 fade-in">
   <img src="88x31/html5.png" alt="HTML5">
   <img src="88x31/any_browser_at.gif" alt="Any Browser">
@@ -54,11 +93,11 @@
   <img src="88x31.png">
 </div>
 <div class="nav fade-in fade-in-delay-1">
-  <a href="#about">About</a> | 
-  <a href="#blog">Blog</a> | 
-  <a href="#music">Music</a> | 
-  <a href="#photos">Photos</a> | 
-  <a href="#projects">Projects</a> |
+  <a href="#about">About</a>
+  <a href="#blog">Blog</a>
+  <a href="#music">Music</a>
+  <a href="#photos">Photos</a>
+  <a href="#projects">Projects</a>
   <a href="#pixelart">Pixel Art</a>
 </div>
 <div class="social fade-in fade-in-delay-2">
@@ -90,6 +129,44 @@
     writable: false
   });
 </script>
+<script>
+// Image popup modal logic
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.getElementById('close-modal');
+  // Listen for clicks on all images except those inside .buttons-88x31
+  document.body.addEventListener('click', function(e) {
+    const target = e.target;
+    if (target.tagName === 'IMG' && !target.closest('.buttons-88x31')) {
+      modalImg.src = target.src;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    document.body.style.overflow = '';
+  });
+  // Close modal on background click
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+  // Optional: close modal on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      modal.style.display = 'none';
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+});
+</script>
 <div id="ckwr">
   <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
   <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
@@ -102,12 +179,12 @@
 </div>
 <h2 id="blog" class="slide-in-right">Blog</h2>
 <div class="fade-in">
-<p>I just switched to Bear for blog posts, and it's so, so much easier! Anyways, here's the links:</p>
+<p><s>I just switched to Bear for blog posts, and it's so, so much easier!</s> I implemented my own markdown popup system! Anyways, here's the links:</p>
 </div>
 <ul class="fade-in fade-in-delay-1">
-  <a href="https://ferretosan.bearblog.dev/why-i-use-aseprite/"><li>12/8/2025: Why I use Aseprite</li></a>
-    <a href="https://ferretosan.bearblog.dev/chromebooks/"><li>14/6/2025: Chromebooks</li></a>
-  <a href="https://ferretosan.bearblog.dev/minecraft-java-vs-bedrock/"><li>16/10/2024: Java or Bedrock</li></a>
+  <a href="#" onclick="loadBlogPost('aesprite.md'); return false;"><li>12/8/2025: Why I use Aseprite</li></a>
+  <a href="#" onclick="loadBlogPost('chromebooks.md'); return false;"><li>14/6/2025: Chromebooks</li></a>
+  <a href="#" onclick="loadBlogPost('mcjob.md'); return false;"><li>16/10/2024: Java or Bedrock</li></a>
 </ul>
 <h2 id="music" class="slide-in-left">Music</h2>
 <div class="fade-in">
@@ -147,7 +224,7 @@
   <a href="https://github.com/ferretosan/purpley"><li>purpley for vscode</li></a>
   <a href="https://github.com/ferretosan/web"><li>ferretosan/web</li></a>
 </ul>
-<h2 id="photos" class="slide-in-right">Pixel Art</h2>
+<h2 id="pixelart" class="slide-in-right">Pixel Art</h2>
 <div class="fade-in">
 <p>I like pixel art. I wrote a blog post about it! Anywways, here's some of my art!</p>
 </div>
@@ -159,5 +236,9 @@
   <img src="art/night bench.png">
   <img src="art/tree bench.png">
 </div>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" title="Back to Top">↑</button>
+
 </body>
 </html>
