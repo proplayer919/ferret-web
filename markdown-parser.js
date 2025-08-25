@@ -22,17 +22,36 @@ function parseMarkdown(markdown) {
   // Inline code
   html = html.replace(/`([^`]+)`/gim, '<code>$1</code>');
   
-  // Line breaks and paragraphs
-  html = html.replace(/\n\n/gim, '</p><p class="fade-in">');
-  html = html.replace(/\n/gim, '<br>');
+  // Task lists (checkboxes) - before list processing
+  html = html.replace(/^- \[x\] (.*$)/gim, '<li><input type="checkbox" checked disabled> $1</li>');
+  html = html.replace(/^- \[ \] (.*$)/gim, '<li><input type="checkbox" disabled> $1</li>');
   
-  // Wrap in paragraphs with animation
-  html = '<p class="fade-in">' + html + '</p>';
+  // Regular list items
+  html = html.replace(/^- (.*$)/gim, '<li>$1</li>');
   
-  // Clean up empty paragraphs
-  html = html.replace(/<p class="fade-in"><\/p>/gim, '');
-  html = html.replace(/<p class="fade-in"><h/gim, '<h');
-  html = html.replace(/<\/h([1-6])><\/p>/gim, '</h$1>');
+  // Wrap consecutive list items in ul tags
+  html = html.replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>');
+  html = html.replace(/<\/ul>\s*<ul>/gim, '');
+  
+  // Split into paragraphs first
+  const paragraphs = html.split(/\n\s*\n/);
+  
+  // Process each paragraph
+  html = paragraphs.map(para => {
+    para = para.trim();
+    if (!para) return '';
+    
+    // Skip if it's already wrapped in block elements
+    if (para.match(/^<(h[1-6]|ul|ol|pre|div)/)) {
+      return para;
+    }
+    
+    // Replace single line breaks with <br> within paragraphs
+    para = para.replace(/\n/g, '<br>');
+    
+    // Wrap in paragraph tags
+    return `<p class="fade-in">${para}</p>`;
+  }).join('\n');
   
   return html;
 }
