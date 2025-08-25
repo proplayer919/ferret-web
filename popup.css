@@ -1,4 +1,9 @@
 /* popup.css */
+/* Enable smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 #popup-overlay {
   display: none;
   position: fixed;

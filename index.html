@@ -53,6 +53,23 @@
           behavior: 'smooth'
         });
       });
+
+      // Add smooth scrolling to navbar links
+      const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
     });
   </script>
 </head>
@@ -68,7 +85,7 @@
 <p class="intro"><i>Legends say the interwebs are still recovering...</i></p>
 <!-- Image Popup Modal -->
 <div id="image-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;">
-  <span id="close-modal" style="position:absolute;top:30px;right:40px;font-size:2.5rem;color:#f472b6;cursor:pointer;font-family:sans-serif;text-shadow:2px 2px 0px #7c2d92;background:#2d1b40;border:2px solid #6d28d9;border-radius:0;padding:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:4px 4px 0px #1e1b3d;transition:color 0.2s, background 0.2s"><i class="fas fa-times"></i></span>
+  <span id="close-modal"><i class="fas fa-times"></i></span>
   <img id="modal-img" src="" alt="Full Image" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
 </div>
 <div class="buttons-88x31 fade-in">

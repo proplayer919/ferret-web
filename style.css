@@ -56,6 +56,10 @@ a:hover {
   border: 3px solid #4c1d95;
   border-radius: 0px;
   box-shadow: 4px 4px 0px #1e1b3d;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
 }
 
 .nav a {
