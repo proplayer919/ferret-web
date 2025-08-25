@@ -49,9 +49,12 @@
   align-items: center;
   justify-content: center;
   box-shadow: 4px 4px 0px #1e1b3d;
-  transition: color 0.2s, background 0.2s;
+  transition: all 0.2s ease;
 }
 #close-modal:hover {
   color: #fbbf24;
   background: #4c1d95;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #1e1b3d;
+  border-color: #7c3aed;
 }
