@@ -1,11 +1,11 @@
-# Quick Notes
+# notie notes
 
-**Currently working on:**
-- Website improvements
+## Working on
+
 - New breakcore tracks
+- Improving this website!
 
-**Listening to:**
-- Squarepusher
-- Aphex Twin
+## Listening to
 
-*Site last updated: Aug 25, 2025*
+- usedcvnt
+- c418

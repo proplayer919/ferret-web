@@ -1,10 +1,5 @@
-# To-Do List
+# to do
 
-- [x] Add popup system
-- [x] Implement markdown parser
-- [x] Add back to top buttons
-- [ ] Update blog posts
-- [ ] Add more pixel art
-- [ ] Optimize for mobile
-
-**Priority:** High
+- make more pixel art
+- finish new breakcore song
+- add side info (you'll see)
