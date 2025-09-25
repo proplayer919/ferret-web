@@ -63,7 +63,7 @@ class StickyNotesManager {
 
   async loadNote(filename) {
     try {
-      const response = await fetch(`/sticky-notes/${filename}`);
+      const response = await fetch(`sticky-notes/${filename}`);
       if (!response.ok) throw new Error(`Failed to load ${filename}`);
       
       const markdown = await response.text();

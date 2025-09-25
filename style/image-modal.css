@@ -38,6 +38,7 @@
   color: #f472b6;
   cursor: pointer;
   font-family: sans-serif;
+  font-weight: bold;
   text-shadow: 2px 2px 0px #7c2d92;
   background: #2d1b40;
   border: 2px solid #6d28d9;
@@ -50,6 +51,7 @@
   justify-content: center;
   box-shadow: 4px 4px 0px #1e1b3d;
   transition: all 0.2s ease;
+  line-height: 1;
 }
 #close-modal:hover {
   color: #fbbf24;

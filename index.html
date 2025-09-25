@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ferret's Corner</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="image-modal.css">
-  <link rel="stylesheet" href="popup.css">
-  <link rel="stylesheet" href="sticky-notes.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/image-modal.css">
+  <link rel="stylesheet" href="style/popup.css">
+  <link rel="stylesheet" href="style/sticky-notes.css">
   <script src="https://kit.fontawesome.com/e0bab3cdb5.js" crossorigin="anonymous"></script>
-  <script src="popup.js"></script>
-  <script src="markdown-parser.js"></script>
-  <script src="sticky-notes.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/markdown-parser.js"></script>
+  <script src="js/sticky-notes.js"></script>
   <script>
     // Scroll animation observer
     document.addEventListener('DOMContentLoaded', function() {
@@ -77,21 +77,26 @@
 </head>
 <body>
 <div id="popup-overlay">
-  <span id="popup-close"><i class="fas fa-times"></i></span>
+  <span id="popup-close"><img src="svg/close.svg" alt="Close" style="width: 24px; height: 24px;"></span>
   <div id="popup-window">
     <div id="popup-content"></div>
-    <button id="popup-back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+    <button id="popup-back-to-top" title="Back to Top"><img src="svg/chevron-up.svg" alt="Back to Top" style="width: 24px; height: 24px;"></button>
   </div>
 </div>
+
+<!-- Hub Button -->
+<a href="https://hub.ferretosan.com"id="hub-button" title="Go to Hub">
+  <img src="img/to-hub.png" alt="Hub">
+</a>
 
 <!-- Sticky Notes Container -->
 <div id="sticky-notes-container" class="sticky-notes-container"></div>
 
-<img src="banner.png" width="100%">
+<img src="img/banner.png" width="100%">
 <p class="intro"><i>Legends say the interwebs are still recovering...</i></p>
 <!-- Image Popup Modal -->
 <div id="image-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;">
-  <span id="close-modal"><i class="fas fa-times"></i></span>
+  <span id="close-modal"><img src="svg/close.svg" alt="Close" style="width: 24px; height: 24px;"></span>
   <img id="modal-img" src="" alt="Full Image" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
 </div>
 <div class="buttons-88x31 fade-in">
@@ -114,7 +119,7 @@
   <img src="https://openbooks.neocities.org/img/srgb-now.png">
   <img src="https://openbooks.neocities.org/img/neocitiesbutton.gif">
   <img src="88x31/the-largest-88x31-collection-2.png">
-  <img src="88x31.png">
+  <img src="img/88x31.png">
 </div>
 <div class="nav fade-in fade-in-delay-1">
   <a href="#about">About</a>
@@ -159,10 +164,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('image-modal');
   const modalImg = document.getElementById('modal-img');
   const closeBtn = document.getElementById('close-modal');
-  // Listen for clicks on all images except those inside .buttons-88x31 and webrings
+  // Listen for clicks on all images except those inside .buttons-88x31, webrings, and hub button
   document.body.addEventListener('click', function(e) {
     const target = e.target;
-    if (target.tagName === 'IMG' && !target.closest('.buttons-88x31') && !target.closest('#ckwr') && !target.closest('#gfdkris')) {
+    if (target.tagName === 'IMG' && !target.closest('.buttons-88x31') && !target.closest('#ckwr') && !target.closest('#gfdkris') && !target.closest('#hub-button')) {
       modalImg.src = target.src;
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -262,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Back to Top Button -->
-<button id="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+<button id="back-to-top" title="Back to Top"><img src="svg/chevron-up.svg" alt="Back to Top" style="width: 28px; height: 28px;"></button>
 
 </body>
 </html>

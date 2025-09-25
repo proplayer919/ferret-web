@@ -1,4 +1,10 @@
-// markdown-parser.js - Simple markdown to HTML converter
+//    .-. .----..-.   .-.  .--.  .----. .-. .-..----.  .----. .-. . .-..-. .-.
+// .-.| |{ {__  |  `.'  | / {} \ | {}  }| |/ / | {}  \/  {}  \| |/ \| ||  `| |
+// | {} |.-._} }| |\ /| |/  /\  \| .-. \| |\ \ |     /\      /|  .'.  || |\  |
+// `----'`----' `-' ` `-'`-'  `-'`-' `-'`-' `-'`----'  `----' `-'   `-'`-' `-'
+// markdown-parser.js - Simple Markdown to HTML parser
+// by Ferretosan !!!!
+
 function parseMarkdown(markdown) {
   let html = markdown;
   
@@ -59,7 +65,7 @@ function parseMarkdown(markdown) {
 // Function to load and display blog post
 async function loadBlogPost(filename) {
   try {
-    const response = await fetch(`/blog/${filename}`);
+    const response = await fetch(`blog/${filename}`);
     if (!response.ok) {
       throw new Error('Blog post not found');
     }
